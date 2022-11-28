@@ -1,7 +1,7 @@
 # dydx-example
 An introduction example for DYDX (Typescript based SDK), with V3 Websocket and Create orders example
 
-!IMPORTANT: Package Dependancies List:
+!IMPORTANT: **Package Dependancies List**
 
 npm i --save ref-napi @dydxprotocol/v3-client ws @types/ws
 
