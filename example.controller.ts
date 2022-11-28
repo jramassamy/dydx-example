@@ -3,9 +3,8 @@ import { Controller, Get } from '@nestjs/common';
 import * as WebSocket from 'ws';
 
 import { DydxClient, Market, OrderResponseObject, OrderSide, OrderStatus, OrderType, TimeInForce } from '@dydxprotocol/v3-client';
-import { CreateOrderQuery, MarketFeed } from './dydx-trading-logic/models/data.model';
+import { CreateOrderQuery, MarketFeed, DataWSAccounts, DataWSOrderbook } from './data.model';
 import { RequestMethod } from '@dydxprotocol/v3-client/build/src/lib/axios';
-import { DataWSAccounts } from './dydx-trading-logic/models/websocket.model';
 
 const HTTP_HOST_STARKNET_PROD = 'https://api.dydx.exchange';
 const NETWORK_ID_STARKNET_PROD = 1;
