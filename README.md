@@ -1,5 +1,5 @@
 # dydx-example
-an introduction example for DYDX (Typescript based SDK), with V3 Websocket and Create orders example
+An introduction example for DYDX (Typescript based SDK), with V3 Websocket and Create orders example
 
 !IMPORTANT: Package Dependancies List:
 
