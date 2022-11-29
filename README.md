@@ -10,3 +10,5 @@ _______________________________________________________________
 !IMPORTANT: If **Visual Studio & Python** dependencies are not installed:
 
 Reinstall your Node.js tool (same version), but this time check **CHOCOLATEY** Installation  (it will init python .env setup and Visual Studio etc, if on Windows).
+
+If you use NestJS, a Dockerfile example is available
