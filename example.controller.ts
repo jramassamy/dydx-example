@@ -18,7 +18,6 @@ const WS_HOST_MAINNET = 'wss://api.dydx.exchange/v3/ws';
 /*EXAMPLE FOR NESTJS, using Typescript, just remove the @Controller if you want simple Typescript class*/
 @Controller()
 export class AppController {
- // ne pas oublier de désactiver la prod sinon les websockets seront en doublons
   dydxWS: WebSocket;
   market: Map<string, MarketFeed> = new Map<string, MarketFeed>();
 
@@ -138,7 +137,6 @@ export class AppController {
     this.console_log(`retrieveAllOrders ${allOrders}`, this.LOGGER.API_RESPONSE);
   }
 
-  // CANCELED: "not created" | OPEN: "let's update it" | FILLED: Filled
   async retrieveOrderById(id: string): Promise<OrderResponseObject> {
     const query: { order: OrderResponseObject } = await this.client.private.getOrderById(id);
     return query.order;
@@ -266,11 +264,10 @@ export class AppController {
 
   }
 
- // ne pas oublier de désactiver la prod sinon les websockets seront en doublons
   handleV3Orderbook(data) {
     const market_name = data.id;
     let m =  this.market.get(market_name);
-    if (data.type === 'subscribed') { // TO-FIX, message_id n'est pas tjr 1 si plusieurs 
+    if (data.type === 'subscribed') {
       m.orderbook.bids = data.contents.bids.filter((i) => +i.size !== 0);
       m.orderbook.asks = data.contents.asks.filter((i) => +i.size !== 0);
       for (let bid of m.orderbook.bids) {
