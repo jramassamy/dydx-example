@@ -42,8 +42,8 @@ export interface DataWSOrderbook {
 }
 
 export interface ContentsOrderbook {
-    bids: any[], // you can upgrade this part ^^, just made it quickly
-    asks: any[]
+    bids: { price: number, size: number, offset: number }[],
+    asks: { price: number, size: number, offset: number }[]
 }
       
 /* START - WS INFO AS interfaces */
