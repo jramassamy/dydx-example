@@ -91,7 +91,7 @@ export class AppController {
       params: {
         side: OrderSide.BUY,
         type: OrderType.MARKET,
-        timeInForce: TimeInForce.GTT,
+        timeInForce: TimeInForce.FOK,
         postOnly: false,
         size: '0.02',
         price: (this.market.get(Market.BTC_USD).latestBid + 1000).toString(),
